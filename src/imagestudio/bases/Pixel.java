@@ -25,14 +25,12 @@ public class Pixel {
     // Constructors
     
     public Pixel() {
-        red = 0;
-        green = 0;
-        blue = 0;
-        alpha = 0;
+        resetPixels();
     }
     
     public Pixel( int[] rgb ){
         if( rgb.length != 4 ){
+            resetPixels();
             Debug.print( WARNING_PIXEL_ARRAYSIZE );
         }
         else{
@@ -41,6 +39,34 @@ public class Pixel {
             blue = rgb[2];
             alpha = rgb[3];
         }
+    }
+    
+    public Pixel( int red, int green, int blue) {
+        this.red = red;
+        this.green = green;
+        this.blue = blue;
+        this.alpha = 255;
+    }
+    
+    public Pixel( int red, int green, int blue, int alpha) {
+        this.red = red;
+        this.green = green;
+        this.blue = blue;
+        this.alpha = alpha;
+    }
+    
+    public Pixel( float red, float green, float blue, float alpha) {
+        this.red = (int) (255*red);
+        this.green = (int) (255*green);
+        this.blue = (int) (255*blue);
+        this.alpha = (int) (255*alpha);
+    }
+    
+    private void resetPixels(){
+        red = 0;
+        green = 0;
+        blue = 0;
+        alpha = 255;
     }
     
     // Getters and Setters
