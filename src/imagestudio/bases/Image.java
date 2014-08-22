@@ -10,5 +10,20 @@ package imagestudio.bases;
  * @author renanmfd
  */
 public class Image {
+    
+    private int width;
+    private int height;
+    
+    private String filepath;
+    private String filename;
+    private String fileformat;
+    
+    private String created;
+    private String updated;
+    
+    private int filesize;
+    private int version;
+    
+    private Pixel[] data;
 
 }
